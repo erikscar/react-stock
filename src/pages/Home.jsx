@@ -21,19 +21,19 @@ export default function Home() {
       <h1>Dashboard</h1>
       <div className="row">
         <div className="dashboard-card">
-          Diversidade de itens
+          Diversidade de Itens
           <span>{diversity}</span>
         </div>
         <div className="dashboard-card">
-          Inventário total
+          Inventário Total
           <span>{inventoryTotal}</span>
         </div>
         <div className="dashboard-card">
-          Itens recentes
+          Itens Recentes
           <span>{recentTotal}</span>
         </div>
         <div className="dashboard-card">
-          Itens acabando
+          Itens em Falta
           <span>{lowQuantityTotal}</span>
         </div>
       </div>
@@ -42,8 +42,8 @@ export default function Home() {
           <table>
             <thead>
               <tr><th>Itens Recentes</th>
-              <th>Ações</th>
-            </tr>
+                <th>Ações</th>
+              </tr>
             </thead>
             <tbody>
               {recentItems.map((item) => (
@@ -59,7 +59,7 @@ export default function Home() {
           <table>
             <thead>
               <tr>
-                <th>Itens acabando</th>
+                <th>Itens em Falta</th>
                 <th>Qtd.</th>
                 <th>Ações</th>
               </tr>

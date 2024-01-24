@@ -4,7 +4,7 @@ export const StockContext = createContext({})
 
 export function StockContextProvider({ children }) {
   const [items, setItems] = useState(() => {
-    const storedItems = localStorage.getItem('obc-react-stock')
+    const storedItems = localStorage.getItem('react-stock')
     if (!storedItems) return []
     const items = JSON.parse(storedItems)
     items.forEach((item) => {
@@ -17,7 +17,7 @@ export function StockContextProvider({ children }) {
   const addItem = (item) => {
     setItems(current => {
       const updatedItems = [item, ...current]
-      localStorage.setItem('obc-react-stock', JSON.stringify(updatedItems))
+      localStorage.setItem('react-stock', JSON.stringify(updatedItems))
       return updatedItems
     })
   }
@@ -31,7 +31,7 @@ export function StockContextProvider({ children }) {
       const itemIndex = current.findIndex(i => i.id === itemId)
       const updatedItems = [...current]
       Object.assign(updatedItems[itemIndex], newAttributes, { updatedAt: new Date() })
-      localStorage.setItem('obc-react-stock', JSON.stringify(updatedItems))
+      localStorage.setItem('react-stock', JSON.stringify(updatedItems))
       return updatedItems
     })
   }
@@ -39,7 +39,7 @@ export function StockContextProvider({ children }) {
   const deleteItem = (itemId) => {
     setItems(current => {
       const updatedItems = current.filter(item => item.id !== itemId)
-      localStorage.setItem('obc-react-stock', JSON.stringify(updatedItems))
+      localStorage.setItem('react-stock', JSON.stringify(updatedItems))
       return updatedItems
     })
   }

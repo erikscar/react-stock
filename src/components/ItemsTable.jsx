@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useStock from "../hooks/useStock";
+import DeleteButton from "./DeleteButton";
 
 export default function ItemsTable() {
   const { items } = useStock();

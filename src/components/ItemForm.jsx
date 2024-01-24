@@ -1,11 +1,7 @@
-import PropTypes from "prop-types"
 import StockItem, { CATEGORIES } from "../entities/StockItem"
 import { useRef, useState } from "react"
 import useStock from "../hooks/useStock"
 
-ItemForm.propTypes = {
-  itemToUpdate: PropTypes.object
-}
 
 export default function ItemForm({ itemToUpdate }) {
   const defaultItem = {
@@ -21,7 +17,7 @@ export default function ItemForm({ itemToUpdate }) {
   const inputRef = useRef(null)
 
   const handleChange = (ev) => {
-    setItem((current) => ({ ...current, [ev.target.name]: ev.target.value }))
+    setItem(currentState => ({ ...currentState, [ev.target.name]: ev.target.value }))
   }
 
   const handleSubmit = (ev) => {
